@@ -830,19 +830,6 @@
     三.函数介绍
   </a>
   
-    <nav class="md-nav" aria-label="三.函数介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    三.函数介绍本库包含两个函数：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -1203,19 +1190,6 @@
     三.函数介绍
   </a>
   
-    <nav class="md-nav" aria-label="三.函数介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    三.函数介绍本库包含两个函数：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -1265,9 +1239,9 @@
 <p>要调用一个库，首先你得<span class="tooltip hint--top" aria-label="废话">下载它</span></p>
 <p>你可以在。。。。。。。【之后再补】。。。。。。。。下载到这个库。</p>
 <p>将下载的压缩包解压，你会得到以下文件：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    |——call.lua
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    |——call
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          |——list.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    |——gocq_api.lua
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    |——gocq_api
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          |——api_list.json
 </code></pre></div>
 <p>一个名叫gocq_api的lua文件，与一个同名的文件夹，文件夹中含有一个api_list.json文件。</p>
 <p>接下来只要把gocq_api.lua和同名的文件夹一起扔进diceqq/plugin文件夹里面，对你的骰娘使用system load指令就好了。</p>
@@ -1287,10 +1261,6 @@
 <p>然后，你就可以使用gapi.http_get()和gapi.http_post()来调用api函数了。</p>
 <h2 id="_3">三.函数介绍<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>本库包含两个函数：</p>
-<div class="highlight"><pre><span></span><code>这个变量名，也就是gapi，当然可以换成其他的，只要你能记得住就可以了。
-</code></pre></div>
-<p>然后，你就可以使用gapi.http_get()和gapi.http_post()来调用api函数了。</p>
-<h3 id="_4">三.函数介绍本库包含两个函数：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>http_post("终结点",参数1,参数2......)</strong></li>
 <li><strong>http_get("终结点",参数1,参数2......)</strong></li>
@@ -1299,14 +1269,49 @@
 <p><strong>api参数请严格按照 <span class="tooltip hint--top" aria-label="https://docs.go-cqhttp.org/api/">API|go-cqhttp帮助中心</span> 中的排列顺序，即从上到下，按序传入，否则可能会出现错误。</strong></p>
 <p>例如，如果在API|go-cqhttp帮助中心中的内容如下：</p>
 <p>终结点：/send_msg
-Data table, columns centered
-| 字段名         | 数据类型| 默认值  | 说明                                                                             |
-| :------------: | :-----: | :-----: | :------------------------------------------------------------------------------: |
-| <code>message_type</code> | <code>string</code>| <code>-</code>     |<code>消息类型, 支持private、group,分别对应私聊、群组,如不传入,则根据传入的*_id参数判断</code> |
-| <code>user_id</code>      | <code>int64</code> | <code>-</code>     |<code>对方 QQ 号 ( 消息类型为 private 时需要 )</code>                                         |
-| <code>group_id</code>     | <code>int64</code> | <code>-</code>     |<code>群号 ( 消息类型为 group 时需要 )</code>                                                 |
-| <code>message</code>      |<code>message</code>| <code>-</code>     |<code>要发送的内容</code>                                                                     |
-| <code>auto_escape</code>  |<code>boolean</code>| <code>flase</code> |<code>消息内容是否作为纯文本发送 ( 即不解析 CQ 码 ) , 只在 message 字段是字符串时有效</code>   |</p>
+Data table, columns centered</p>
+<table>
+<thead>
+<tr>
+<th align="center">字段名</th>
+<th align="center">数据类型</th>
+<th align="center">默认值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>message_type</code></td>
+<td align="center"><code>string</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>消息类型, 支持private、group,分别对应私聊、群组,如不传入,则根据传入的*_id参数判断</code></td>
+</tr>
+<tr>
+<td align="center"><code>user_id</code></td>
+<td align="center"><code>int64</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>对方 QQ 号 ( 消息类型为 private 时需要 )</code></td>
+</tr>
+<tr>
+<td align="center"><code>group_id</code></td>
+<td align="center"><code>int64</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>群号 ( 消息类型为 group 时需要 )</code></td>
+</tr>
+<tr>
+<td align="center"><code>message</code></td>
+<td align="center"><code>message</code></td>
+<td align="center"><code>-</code></td>
+<td align="center"><code>要发送的内容</code></td>
+</tr>
+<tr>
+<td align="center"><code>auto_escape</code></td>
+<td align="center"><code>boolean</code></td>
+<td align="center"><code>flase</code></td>
+<td align="center"><code>消息内容是否作为纯文本发送 ( 即不解析 CQ 码 ) , 只在 message 字段是字符串时有效</code></td>
+</tr>
+</tbody>
+</table>
 <p>那么你可以这么传入参数：gapi.http_post("send_msg", "group", nil, 971050440, "test,test~").</p>
 <p>然后，在调用这个函数时，骰娘便会向群聊<span class="tooltip hint--top" aria-label="☃️ssJSKFJDJ♬">971050440</span>发送一条信息: “test,test~”。</p>
 <div class="admonition note">
@@ -1326,7 +1331,7 @@ Data table, columns centered
 
 
 
-  <p><small>贡献者: <span class='git-page-authors git-authors'><a href='mailto:116723741+pineoncellar@users.noreply.github.com'>pine</a></span></small></p>
+  <p><small>贡献者: <span class='git-page-authors git-authors'><a href='mailto:hsiangnianian@outlook.com'>cypress0522</a> (1.04%), <a href='mailto:116723741+pineoncellar@users.noreply.github.com'>pine</a> (98.96%)</span></small></p>
 
 
   
